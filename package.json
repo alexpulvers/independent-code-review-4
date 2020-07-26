@@ -1,14 +1,13 @@
 {
-  "name": "my-project",
+  "name": "independent-code-review-4",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
-    "start": "npm run build; webpack-dev-server --open --mode development",
+    "start": "npm run build & webpack-dev-server --open --mode development",
     "lint": "eslint src/*.js",
-    "test": "jest",
-    "debug": "node --inspect node_modules/.bin/jest --runInBand"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
-    "clean-webpack-plugin": "3.0.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "eslint": "^6.3.0",
     "eslint-loader": "^3.0.0",
@@ -29,8 +28,9 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.15.0"
+    "bootstrap": "^4.5.0",
+    "css": "^3.0.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   }
 }
