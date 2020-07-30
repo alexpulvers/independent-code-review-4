@@ -4,7 +4,7 @@ import { CurrencyExchanger } from "./../currency-exchange.js";
 
 $(document).ready(function () {
   $("#money").submit(function () {
-    const amount = $("#amount").val();
+    const amount = $("#money").val();
     const currency = $("#currency").val();
     async () => {
       let currencyExchanger = new CurrencyExchanger();

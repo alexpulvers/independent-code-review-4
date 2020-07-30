@@ -1,7 +1,7 @@
 export class CurrencyExchanger {
   async callAPI() {
-    let newUrl = getRate(currency, amount);
     try {
+      let newUrl = getRate(currency, amount);
       let response = await fetch(newUrl);
       let jsonifiedResponse;
       if (response.status === 200) {
@@ -16,7 +16,7 @@ export class CurrencyExchanger {
   }
 }
 
-function getRate(currency, amount) {
+export function getRate(currency, amount) {
   let newUrl;
   switch (currency) {
     case "eur":
