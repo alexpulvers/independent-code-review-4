@@ -1,10 +1,10 @@
 export class CurrencyExchanger {
   async callAPI() {
     try {
-      let newUrl = getRate(currency, amount);
+      let newUrl = `https://v6.exchangerate-api.com/v6/0e1a7fd3c25b141bbea59a38/latest/USD`;
       let response = await fetch(newUrl);
       let jsonifiedResponse;
-      if (response.status === 200) {
+      if (response.status == 200) {
         jsonifiedResponse = await response.json();
       } else {
         jsonifiedResponse = false;
@@ -14,28 +14,4 @@ export class CurrencyExchanger {
       return false;
     }
   }
-}
-
-export function getRate(currency, amount) {
-  let newUrl;
-  switch (currency) {
-    case "eur":
-      newUrl = `https://pro.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/eur/${amount}`;
-      break;
-    case "gbp":
-      newUrl = `https://pro.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/gbp/${amount}`;
-      break;
-    case "jpy":
-      newUrl = `https://pro.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/jpy/${amount}`;
-      break;
-    case "rub":
-      newUrl = `https://pro.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/rub/${amount}`;
-      break;
-    case "krw":
-      newUrl = `https://pro.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/krw/${amount}`;
-      break;
-    default:
-      break;
-  }
-  return newUrl;
 }
