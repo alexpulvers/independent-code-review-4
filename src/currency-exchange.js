@@ -1,7 +1,7 @@
 export class CurrencyExchanger {
   async callAPI() {
     try {
-      let newUrl = `https://v6.exchangerate-api.com/v6/0e1a7fd3c25b141bbea59a38/latest/USD`;
+      let newUrl = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
       let response = await fetch(newUrl);
       let jsonifiedResponse;
       if (response.status == 200) {

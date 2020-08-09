@@ -45,10 +45,10 @@ $(document).ready(function () {
       default:
         break;
     }
-    if (response) {
+    if (response.status == "ok") {
       $("#showResult").text(userResponse);
     } else {
-      $("#showErrors").text("error, please check your connection");
+      $("#showErrors").text("error, please check your input");
     }
   }
 });
