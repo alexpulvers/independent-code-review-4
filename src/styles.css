@@ -1,0 +1,20 @@
+h1 {
+  border-style: groove;
+  background-color: rgb(69, 153, 121);
+}
+
+body {
+  text-align: center;
+  background-color: darkgoldenrod;
+  border-style: ridge;
+}
+
+#showResult {
+  border-style: double;
+  background-color: ivory;
+}
+
+#showErrors {
+  border-style: double;
+  background-color: tomato;
+}

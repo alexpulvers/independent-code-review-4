@@ -11,7 +11,8 @@ $(document).ready(function () {
       getElements(response);
     })();
   });
-
+  $("#showErrors").hide();
+  $("#showResult").hide();
   function getElements(response) {
     const amount = $("#amount").val();
     const cur = $("#currency").val();
@@ -45,10 +46,16 @@ $(document).ready(function () {
       default:
         break;
     }
-    if (response.status == "ok") {
+    if (response.result == !200) {
+      $("#showErrors").text("error, please check your connection");
+    } else if (amount > 0) {
+      $("#showResult").show();
+      $("#showErrors").hide();
       $("#showResult").text(userResponse);
     } else {
-      $("#showErrors").text("error, please check your input");
+      $("#showErrors").show();
+      $("#showResult").hide();
+      $("#showErrors").text("Please enter a positive number.");
     }
   }
 });
